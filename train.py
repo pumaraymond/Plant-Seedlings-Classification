@@ -20,7 +20,9 @@ learning_rate = 0.01
 base_path = os.path.dirname(os.path.abspath(__file__))
 train_data_path = os.path.join(base_path, "dataset", "train")
 weight_path = os.path.join(base_path, "weights", "weight.pth")
-
+os.makedirs(os.path.dirname(weight_path), exist_ok=True)
+result_path = os.path.join(base_path, "result")
+os.makedirs(result_path, exist_ok=True)
 train_loader, valid_loader = make_train_dataloader(train_data_path)
 
 model = my_resnet_50()
